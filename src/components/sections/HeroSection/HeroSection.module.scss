@@ -1,0 +1,62 @@
+.hero-section {
+  $selector: &;
+
+  gap: 30px;
+  display: flex;
+
+  &__details {
+    max-width: 500px;
+    width: 50%;
+    text-transform: capitalize;
+
+    #{$selector}__button {
+      margin-top: 30px;
+    }
+
+    #{$selector}__description {
+      line-height: 160%;
+      font-size: clamp(12px, 1vw, 18px);
+    }
+  }
+
+  &__img {
+    &--mobile {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+
+    &__details {
+      width: 100%;
+
+      .button {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .statistics {
+        display: grid;
+        justify-content: center;
+        margin-top: 40px;
+      }
+    }
+
+    &__img {
+      &--mobile {
+        display: block;
+        margin: 40px 0;
+      }
+
+      &--desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__statistics {
+    display: grid;
+    margin-top: 40px;
+  }
+}

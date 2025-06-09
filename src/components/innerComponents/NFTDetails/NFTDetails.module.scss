@@ -1,0 +1,36 @@
+.nft-details {
+  display: grid;
+  row-gap: 10px;
+
+  h3 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  &__user {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__user-avatar {
+    img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__avatar {
+    border-radius: 100%;
+    height: 24px;
+    overflow: hidden;
+    width: 24px;
+  }
+
+  &__username {
+    span {
+      font-family: 'Space Mono', sans-serif;
+    }
+  }
+}

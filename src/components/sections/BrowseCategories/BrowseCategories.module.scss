@@ -1,0 +1,36 @@
+.browse-categories {
+  display: grid;
+  row-gap: 60px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 30px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    & > li {
+      width: 25%;
+      padding: 0 10px;
+    }
+  }
+
+  @media only screen and (max-width: 920px) {
+    &__container {
+      justify-content: center;
+
+      & > li {
+        width: 33.33%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    &__container {
+      & > li {
+        width: 50%;
+      }
+    }
+  }
+}

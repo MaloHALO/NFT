@@ -1,0 +1,21 @@
+.header {
+  $selector: &;
+
+  padding: 20px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: auto;
+  align-items: center;
+
+  &__navbar {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @media only screen and (max-width: 945px) {
+      display: none;
+    }
+  }
+}

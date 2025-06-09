@@ -1,0 +1,60 @@
+@use '../../../assets/styles/mixins';
+
+.rankings {
+  $selector: &;
+
+  margin: 0 auto;
+  max-width: 1050px;
+
+  &__title-page {
+    margin-bottom: mixins.clamps(50px, 80px);
+
+    h1 {
+      margin: 0 0 20px 0;
+      font-size: mixins.clamps(45px, 51px);
+      line-height: 37px;
+    }
+
+    p {
+      font-size: mixins.clamps(14px, 22px);
+      line-height: mixins.clamps(20px, 35px);
+    }
+  }
+
+  &__control-panel-desktop {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 830px;
+    margin: 0 auto;
+
+    p {
+      font-weight: 600;
+      font-size: mixins.clamps(13px, 22px);
+    }
+  }
+
+  &__control-panel-adaptive {
+    display: none;
+  }
+
+  @media only screen and (max-width: 790px) {
+    &__control-panel-adaptive {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 830px;
+      margin: 0 auto;
+
+      p {
+        font-weight: 600;
+        font-size: mixins.clamps(13px, 22px);
+        line-height: 12px;
+      }
+    }
+
+    &__control-panel-desktop {
+      display: none;
+    }
+  }
+}

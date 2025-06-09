@@ -1,0 +1,66 @@
+@use 'src/assets/styles/mixins';
+
+.connect-wallet {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  gap: mixins.clamps(20px, 60px);
+
+  & > div {
+    width: 50%;
+  }
+
+  p {
+    font-size: mixins.clamps(16px, 22px);
+    line-height: mixins.clamps(22px, 35px);
+    max-width: 410px;
+  }
+
+  &__img-container {
+    margin: 0 -18px;
+  }
+
+  &__img {
+    background: url("/src/mocks/media/background/background-2.png") no-repeat center;
+    height: 100%;
+    background-size: cover;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__wallet-selection {
+    padding: mixins.clamps(0px, 140px) 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    p {
+      margin: auto;
+      max-width: 300px;
+    }
+
+    & > div {
+      width: 100%;
+    }
+
+    &__img-container {
+      margin: -12px;
+    }
+
+    &__img {
+      height: mixins.clamps(232px, 1000px);
+      margin: 0 -30px;
+      width: calc(100% + 30px * 2);
+    }
+
+    &__title {
+      display: grid;
+      justify-content: center;
+    }
+  }
+}

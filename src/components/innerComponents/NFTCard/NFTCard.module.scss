@@ -1,0 +1,16 @@
+@use '../../../assets/styles/variables/colors';
+
+.nft-card {
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 510px;
+  background-color: colors.$black-liquorice;
+
+  &_is-dark-background {
+    background-color: colors.$shoe-wax;
+  }
+
+  &__details {
+    padding: 22px 20px;
+  }
+}

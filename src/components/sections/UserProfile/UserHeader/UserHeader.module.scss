@@ -1,0 +1,34 @@
+@use 'src/assets/styles/variables/colors';
+@use 'src/assets/styles/mixins';
+
+.user-header {
+  $selector: &;
+
+  padding: 0;
+  max-width: 1280px;
+  margin: calc(#{mixins.clamps(40px, 80px)} * -1) auto 0;
+
+  &__background {
+    background: var(--background);
+    height: 320px;
+    background-size: cover;
+    margin: 0 -18px;
+  }
+
+  &__avatar-container {
+    max-width: 1050px;
+    margin: -60px auto 0;
+
+    #{$selector}__avatar {
+      border: 4px solid colors.$shoe-wax;
+      width: fit-content;
+      border-radius: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    &__avatar {
+      margin: 0 auto;
+    }
+  }
+}

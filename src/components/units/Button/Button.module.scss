@@ -1,0 +1,48 @@
+@use 'src/assets/styles/variables/colors';
+
+.button {
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Work Sans', sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  gap: 12px;
+  height: 60px;
+  background: colors.$purple;
+  border-radius: 20px;
+  color: colors.$white;
+  border: none;
+  width: max-content;
+
+  svg {
+    max-width: 20px;
+    max-height: 20px;
+    fill: colors.$white;
+  }
+
+  &_outline {
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid colors.$purple;
+
+    svg {
+      fill: colors.$purple;
+    }
+  }
+
+  &_secondary {
+    background: colors.$white;
+    color: colors.$black;
+
+    svg {
+      fill: colors.$purple;
+    }
+  }
+
+  &_width-fill {
+    width: 100%;
+  }
+}

@@ -1,0 +1,59 @@
+@use 'sass:math';
+@use 'sass:list';
+
+@mixin container1046 {
+  margin: 0 auto;
+  max-width: 1046px;
+}
+
+@mixin container1280 {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+@mixin font($font-typography, $font-weight: 400) {
+  $max: list.nth($font-typography, 1);
+  $min: list.nth($font-typography, 2);
+
+  @if not $min {
+    font-size: list.nth($max, 1);
+    font-weight: $font-weight;
+    line-height: list.nth($max, 2);
+  } @else {
+    font-size: clamps(list.nth($min, 1), list.nth($max, 1));
+    font-weight: $font-weight;
+    line-height: clamps(list.nth($min, 2), list.nth($max, 2));
+  }
+}
+
+@mixin section {
+  padding: clamps(40px, 80px) 0;
+}
+
+@mixin font($font-typography, $font-weight: 400) {
+  $max: list.nth($font-typography, 1);
+  $min: list.nth($font-typography, 2);
+
+  @if not $min {
+    font-size: list.nth($max, 1);
+    font-weight: $font-weight;
+    line-height: list.nth($max, 2);
+  } @else {
+    font-size: clamps(list.nth($min, 1), list.nth($max, 1));
+    font-weight: $font-weight;
+    line-height: clamps(list.nth($min, 2), list.nth($max, 2));
+  }
+}
+
+@function clamp-medium-value($min-value, $max-value, $min-width, $max-width) {
+  $slope: calc(($max-value - $min-value) / ($max-width - $min-width));
+  $y-axis-intersection: calc($min-width * -1 * $slope + $min-value);
+
+  @return $y-axis-intersection + ' + ' + $slope * 100 + 'vw';
+}
+
+@function clamps($min-value, $max-value, $min-width: 320px, $max-width: 1440px) {
+  $medium-value: clamp-medium-value($min-value, $max-value, $min-width, $max-width);
+
+  @return clamp(#{$min-value}, #{$medium-value}, #{$max-value});
+}

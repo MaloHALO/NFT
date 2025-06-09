@@ -1,0 +1,19 @@
+@use 'src/assets/styles/variables/colors';
+
+.logo {
+  align-items: center;
+  column-gap: 12px;
+  display: inline-flex;
+  font-size: 22px;
+  line-height: 16px;
+  font-weight: 600;
+  font-family: 'Space Mono', sans-serif;
+
+  @media only screen and (max-width: 375px) {
+    font-size: 18px;
+  }
+
+  &__icon {
+    fill: colors.$purple;
+  }
+}

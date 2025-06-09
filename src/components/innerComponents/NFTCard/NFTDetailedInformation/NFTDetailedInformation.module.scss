@@ -1,0 +1,22 @@
+@use '../../../../assets/styles/variables/colors';
+
+.nft-details-information {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', sans-serif;
+  padding: 22px 20px;
+
+  dl {
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  dt {
+    color: colors.$dark-gray;
+  }
+
+  dd {
+    margin-top: 8px;
+  }
+}

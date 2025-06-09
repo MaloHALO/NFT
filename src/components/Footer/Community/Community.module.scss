@@ -1,0 +1,17 @@
+@use 'src/assets/styles/variables/colors';
+
+.community {
+  p {
+    color: colors.$gray;
+    font-size: 18px;
+  }
+
+  svg {
+    fill: colors.$dark-gray;
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 15px;
+  }
+}

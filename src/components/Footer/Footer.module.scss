@@ -1,0 +1,83 @@
+@use 'src/assets/styles/variables/colors';
+
+.footer {
+  $selector: &;
+
+  font-weight: 400;
+
+  h4 {
+    font-family: 'Space Mono', sans-serif;
+    margin-bottom: 25px;
+  }
+
+  p,
+  &__menu {
+    color: colors.$gray;
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 390px;
+
+    a {
+      color: colors.$gray;
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1046px;
+    padding: 0 18px;
+  }
+
+  &__content {
+    display: flex;
+    padding: 50px 0;
+    justify-content: space-between;
+    row-gap: 30px;
+
+    #{$selector}__logo-and-community {
+      max-width: 265px;
+
+      #{$selector}__community {
+        margin-top: 20px;
+      }
+    }
+
+    #{$selector}__logo {
+      margin-bottom: 35px;
+      height: 35px;
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid #858584;
+    padding: 20px 0;
+
+    p {
+      color: colors.$gray;
+    }
+  }
+
+  @media only screen and (max-width: 930px) {
+    &__content {
+      display: grid;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    h4 {
+      font-size: 18px;
+    }
+
+    &__content {
+      #{$selector}__down__title {
+        font-size: 15px;
+      }
+    }
+
+    &__copyright {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
